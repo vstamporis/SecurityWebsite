@@ -1,3 +1,7 @@
+package com;
+
+import io.quarkus.elytron.security.common.BcryptUtil;
+
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
@@ -21,6 +25,7 @@ public class userResource {
 //    @PermitAll
     public String userInfo(@Context SecurityContext securityContext){
         return securityContext.getUserPrincipal().getName();
+//        return BcryptUtil.bcryptHash("123");
     }
 
 
